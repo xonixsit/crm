@@ -1,0 +1,16 @@
+<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CRM Logo">
+  <!-- Background -->
+  <rect x="0" y="0" width="300" height="100" rx="16" fill="#4F46E5"></rect>
+
+  <!-- CRM Text -->
+  <text x="100" y="60" fill="#ffffff" font-family="Segoe UI, Roboto, sans-serif" font-size="40" font-weight="600">
+    CRM
+  </text>
+
+  <!-- Node Icon (3 connected dots) -->
+  <circle cx="40" cy="50" r="6" fill="#FACC15"></circle>
+  <circle cx="70" cy="30" r="6" fill="#FACC15"></circle>
+  <circle cx="70" cy="70" r="6" fill="#FACC15"></circle>
+  <line x1="40" y1="50" x2="70" y2="30" stroke="#FACC15" stroke-width="2"></line>
+  <line x1="40" y1="50" x2="70" y2="70" stroke="#FACC15" stroke-width="2"></line>
+</svg>

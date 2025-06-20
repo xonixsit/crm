@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Re-assign Flux's gray of choice... */
+@theme {
+    --color-zinc-50: var(--color-gray-50);
+    --color-zinc-100: var(--color-gray-100);
+    --color-zinc-200: var(--color-gray-200);
+    --color-zinc-300: var(--color-gray-300);
+    --color-zinc-400: var(--color-gray-400);
+    --color-zinc-500: var(--color-gray-500);
+    --color-zinc-600: var(--color-gray-600);
+    --color-zinc-700: var(--color-gray-700);
+    --color-zinc-800: var(--color-gray-800);
+    --color-zinc-900: var(--color-gray-900);
+    --color-zinc-950: var(--color-gray-950);
+}
+
+@theme {
+    --color-accent: var(--color-green-600);
+    --color-accent-content: var(--color-green-600);
+    --color-accent-foreground: var(--color-white);
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-green-600);
+        --color-accent-content: var(--color-green-400);
+        --color-accent-foreground: var(--color-white);
+    }
+}
+
+.tom-select .ts-control {
+    background-color: #1f2937; /* gray-800 */
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    min-height: 2.5rem;
+}
+
+.tom-select .ts-dropdown {
+    background-color: #111827; /* gray-900 */
+    border: 1px solid #374151; /* gray-700 */
+}
+
+.tom-select .ts-control input {
+    color: white;
+}
+
+.tom-select .item {
+    background-color: #374151; /* gray-700 */
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.tom-select .item .remove {
+    color: #9ca3af; /* gray-400 */
+}
+.tom-select .ts-control {
+    @apply bg-gray-800 text-white border-none rounded-lg min-h-[42px] px-2 py-1 flex flex-wrap items-center;
+}
+
+.tom-select .ts-control > input {
+    @apply bg-transparent text-white focus:outline-none;
+}
+
+.tom-select .ts-dropdown {
+    @apply bg-gray-900 border border-gray-700 mt-1 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto;
+}
+
+.tom-select .ts-dropdown .option {
+    @apply text-white px-4 py-2 cursor-pointer rounded hover:bg-indigo-600 hover:text-white;
+}
+.glassmorphism {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+/* resources/css/app.css or similar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #4B5563; /* Gray-600 */
+    border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #6B7280; /* Gray-500 */
+}
