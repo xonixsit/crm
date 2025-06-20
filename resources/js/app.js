@@ -1,16 +1,26 @@
 import './bootstrap';
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/vue3';
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { InertiaProgress } from '@inertiajs/progress';
 
-import Alpine from 'alpinejs';
+InertiaProgress.init({
+    delay: 250,
+    color: '#29d',
+    includeCSS: true,
+    showSpinner: true,
+});
 
-window.Alpine = Alpine;
-
-// Ensure Alpine starts after Livewire is ready
-document.addEventListener('livewire:init', () => {
-    if (window.Livewire) {
-        Alpine.start();
-    } else {
-        console.error('Livewire is not defined. Alpine.js entanglement may not work.');
-    }
+createInertiaApp({
+    resolve: (name) => resolvePageComponent(
+        `./Pages/${name}.vue`,
+        import.meta.glob('./Pages/**/*.vue')
+    ),
+    setup({ el, App, props, plugin }) {
+        createApp({ render: () => h(App, props) })
+            .use(plugin)
+            .mount(el);
+    },
 });
 
 
